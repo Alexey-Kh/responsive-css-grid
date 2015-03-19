@@ -1,0 +1,244 @@
+/* CSS Grid */
+
+.container {
+  width: 940px;
+  margin: 0 auto;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+.row:after {
+  display: block;
+  content: " ";
+  visibility: hidden;
+  clear: both;
+}
+
+[class*="span"] {
+  float: left;
+  display: inline;
+  margin-right: 20px;
+}
+
+[class*="span"]:last-child {
+  float: right;
+  margin-right: 0px;
+}
+
+.span1  { width:  60px }
+.span2  { width: 140px }
+.span3  { width: 220px }
+.span4  { width: 300px }
+.span5  { width: 380px }
+.span6  { width: 460px }
+.span7  { width: 540px }
+.span8  { width: 620px }
+.span9  { width: 700px }
+.span10 { width: 780px }
+.span11 { width: 860px }
+.span12 { width: 940px }
+
+.offset1  { margin-left:  60px }
+.offset2  { margin-left: 140px }
+.offset3  { margin-left: 220px }
+.offset4  { margin-left: 300px }
+.offset5  { margin-left: 380px }
+.offset6  { margin-left: 460px }
+.offset7  { margin-left: 540px }
+.offset8  { margin-left: 620px }
+.offset9  { margin-left: 700px }
+.offset10 { margin-left: 780px }
+.offset11 { margin-left: 860px }
+.offset12 { margin-left: 940px }
+
+/* Main CSS */
+
+* {
+  transition: all .5s;
+  box-sizing: border-box;
+}
+
+html {
+  background: #ddd;  
+  font-family: Tahoma, Arial;
+}
+
+.header {
+  border-radius: 5px;
+  background: #555;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+
+.header h1 {
+  text-align: center;
+  line-height: 100%;
+  font-weight: bold;
+  color: #fff;  
+  text-shadow: 0 2px 5px rgba(255,255,255,.5);
+}
+
+.search {
+  margin-top: 25px;
+}
+
+.search input{
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;  
+  box-shadow: 1px 3px 10px rgba(0,0,0,.4);
+  outline-color: #a44;
+}
+
+.slider {
+  height: 300px;
+  background: radial-gradient(#ccc -30%, #a22 110%);
+  border-radius: 5px;  
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+
+.main {
+  text-indent: 30px;
+}
+
+.main h2 {
+  margin-bottom: 30px;
+}
+
+.main p {
+  text-align: justify;
+}
+
+.sidebar {
+  margin-top: 40px;
+}
+
+.sidebar nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.sidebar nav ul li a {
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,.3);
+  background: #aaa;
+  display: block;
+  margin: 5px 0;
+  width: 220px;
+  height: 40px;
+  line-height: 40px;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #fff;
+}
+
+.sidebar nav ul li a:hover {
+  background: #a44;
+}
+
+.footer {
+  border-top: rgba(0,0,0,.3) solid;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Responsive main CSS  */
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  .sidebar nav ul li a {
+    width: 176px;
+  }
+}
+
+/* Responsive CSS Grid */
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main {
+    text-indent: 0;
+  }
+
+  .slider {
+    height: 150px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  .container {
+    width: 300px;
+  }
+
+  [class*="span"] { 
+    width: 300px 
+  }
+} 
+
+@media only screen and (min-width: 480px) and (max-width: 599px) {
+  .container {
+    width: 460px;
+  }
+
+  [class*="span"] { 
+    width: 460px 
+  }
+} 
+
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+  .container {
+    width: 580px;
+  }
+
+  [class*="span"] { 
+    width: 580px 
+  }
+} 
+
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  .container {
+    width: 743px;
+  }
+
+  [class*="span"] { 
+    width: 743px 
+  }
+
+  .slider {
+    height: 200px;
+  }
+
+  .span1  { width:  50px }
+  .span2  { width: 113px }
+  .span3  { width: 176px }
+  .span4  { width: 239px }
+  .span5  { width: 302px }
+  .span6  { width: 365px }
+  .span7  { width: 428px }
+  .span8  { width: 491px }
+  .span9  { width: 554px }
+  .span10 { width: 617px }
+  .span11 { width: 680px }
+  .span12 { width: 743px }
+
+  .offset1  { margin-left:  50px }
+  .offset2  { margin-left: 113px }
+  .offset3  { margin-left: 176px }
+  .offset4  { margin-left: 239px }
+  .offset5  { margin-left: 302px }
+  .offset6  { margin-left: 365px }
+  .offset7  { margin-left: 428px }
+  .offset8  { margin-left: 491px }
+  .offset9  { margin-left: 554px }
+  .offset10 { margin-left: 617px }
+  .offset11 { margin-left: 680px }
+  .offset12 { margin-left: 743px }
+  
+  [class*="span"] {
+    margin-right: 13px;
+  }
+} 
