@@ -9,16 +9,22 @@
 <body>
   <div class="container">
     <div class="row">
-      <header class="header span4">
-        <h1>CSS GRID</h1>
+      <header class="header col-4">
+        <h1 class="logo">CSS GRID</h1>
+        <ul class="icon show-mobile unselectable-text">
+          <li id="icon-menu">&#0067;</li>
+          <li id="icon-search">&#0035;</li>
+        </ul>        
+        <div class="dropdown-search show-mobile"></div>
+        <div class="dropdown-menu show-mobile"></div>
       </header>
-      <div class="search span3 offset5"><input type="text" name="" id=""></div>
+      <div class="search col-3 offset5"><input class="search-input" type="text" name="" id=""></div>
     </div>
     <div class="row">
-      <div class="slider span12"></div>
+      <div class="slider col-12"></div>
     </div>
     <div class="row">
-      <main class="main span9">
+      <main class="main col-9">
         <h2>Lorem ipsum dolor sit.</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti voluptatum, modi mollitia placeat, suscipit tenetur beatae. Pariatur necessitatibus similique aut vitae! Quia voluptas ad sed aut numquam consequatur blanditiis delectus.</p>
         <p>Ea quasi laborum, nemo facilis et consequatur quos vel veritatis commodi, ratione aliquid culpa quaerat inventore tempora tenetur odit voluptatum dicta omnis qui! Pariatur enim aspernatur veniam recusandae modi, fuga?</p>
@@ -31,9 +37,9 @@
         <p>Quidem ex nostrum esse beatae architecto cumque aut dolor possimus corporis magni tempora, nihil et. Alias, sint, doloribus in a impedit, debitis laudantium laborum beatae molestiae minima maiores voluptatibus dignissimos.</p>
         <p>Quasi soluta temporibus similique facere tenetur distinctio, necessitatibus, explicabo et consequatur neque voluptatum at, error molestiae harum deserunt voluptatibus recusandae repellat pariatur nemo tempora. Quasi atque nesciunt expedita dolorum nemo.</p>
       </main>
-      <sidebar class="sidebar span3">
+      <sidebar class="sidebar col-3">
         <nav>
-          <ul>
+          <ul class="nav">
             <li><a href="">Item 1</a></li>
             <li><a href="">Item 2</a></li>
             <li><a href="">Item 3</a></li>
@@ -44,10 +50,14 @@
       </sidebar>
     </div>
     <div class="row">
-      <footer class="footer span12"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</small></footer>
+      <footer class="footer col-12">
+        <p class="to-top"><a href="#">Back to top.</a></p>
+        <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</small>
+      </footer>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

@@ -1,3 +1,12 @@
+/* Fonts */
+@font-face{ 
+      font-family: 'WebSymbolsLigaRegular';
+          src: url('fonts/WebSymbolsLiga-Regular/websymbolsligaregular.eot');
+          src: url('fonts/WebSymbolsLiga-Regular/websymbolsligaregular.eot?#iefix') format('embedded-opentype'),
+               url('fonts/WebSymbolsLiga-Regular/websymbolsligaregular.woff') format('woff'),
+               url('fonts/WebSymbolsLiga-Regular/websymbolsligaregular.ttf') format('truetype'),
+               url('fonts/WebSymbolsLiga-Regular/websymbolsligaregular.svg#WebSymbolsRegular') format('svg');
+}
 /* CSS Grid */
 
 .container {
@@ -15,29 +24,29 @@
   clear: both;
 }
 
-[class*="span"] {
+[class*="col-"] {
   float: left;
   display: inline;
   margin-right: 20px;
 }
 
-[class*="span"]:last-child {
+[class*="col-"]:last-child {
   float: right;
   margin-right: 0px;
 }
 
-.span1  { width:  60px }
-.span2  { width: 140px }
-.span3  { width: 220px }
-.span4  { width: 300px }
-.span5  { width: 380px }
-.span6  { width: 460px }
-.span7  { width: 540px }
-.span8  { width: 620px }
-.span9  { width: 700px }
-.span10 { width: 780px }
-.span11 { width: 860px }
-.span12 { width: 940px }
+.col-1  { width:  60px }
+.col-2  { width: 140px }
+.col-3  { width: 220px }
+.col-4  { width: 300px }
+.col-5  { width: 380px }
+.col-6  { width: 460px }
+.col-7  { width: 540px }
+.col-8  { width: 620px }
+.col-9  { width: 700px }
+.col-10 { width: 780px }
+.col-11 { width: 860px }
+.col-12 { width: 940px }
 
 .offset1  { margin-left:  60px }
 .offset2  { margin-left: 140px }
@@ -55,13 +64,24 @@
 /* Main CSS */
 
 * {
-  transition: all .5s;
+  transition: all .3s;
   box-sizing: border-box;
 }
 
+.unselectable-text { 
+  -webkit-user-select: none; 
+  -khtml-user-select: none; 
+  -moz-user-select: none; 
+  -o-user-select: none; 
+  user-select: none; 
+}
 html {
   background: #ddd;  
   font-family: Tahoma, Arial;
+}
+
+.show-mobile {
+  display: none;
 }
 
 .header {
@@ -70,7 +90,7 @@ html {
   box-shadow: 0 0 10px rgba(0,0,0,.5);
 }
 
-.header h1 {
+.header .logo {
   text-align: center;
   line-height: 100%;
   font-weight: bold;
@@ -82,7 +102,7 @@ html {
   margin-top: 25px;
 }
 
-.search input{
+.search-input {
   width: 100%;
   height: 30px;
   border-radius: 5px;  
@@ -113,19 +133,19 @@ html {
   margin-top: 40px;
 }
 
-.sidebar nav ul {
+.nav {
   padding: 0;
   margin: 0;
   list-style: none;
   text-align: center;
 }
 
-.sidebar nav ul li a {
+.nav li a {
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0,0,0,.3);
   background: #aaa;
   display: block;
-  margin: 5px 0;
+  margin: 5px auto;
   width: 220px;
   height: 40px;
   line-height: 40px;
@@ -134,21 +154,30 @@ html {
   color: #fff;
 }
 
-.sidebar nav ul li a:hover {
+.nav li a:hover {
   background: #a44;
 }
 
 .footer {
   border-top: rgba(0,0,0,.3) solid;
-  padding-top: 40px;
+  padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
   font-style: italic;
 }
 
+.footer a {
+  color: #111;
+  text-decoration: none;
+}
+
+.footer a:hover, a:active {
+  color: #a44;
+}
+
 /* Responsive main CSS  */
 @media only screen and (min-width: 768px) and (max-width: 979px) {
-  .sidebar nav ul li a {
+  .nav li a {
     width: 176px;
   }
 }
@@ -156,7 +185,7 @@ html {
 /* Responsive CSS Grid */
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
-  .sidebar {
+  .sidebar, .search {
     display: none;
   }
 
@@ -167,44 +196,90 @@ html {
   .slider {
     height: 150px;
   }
+
+  .show-mobile {
+    display: block;
+  }
+
+  .icon {    
+    font-family: WebSymbolsLigaRegular;
+    color: #fff;
+    margin: 0;
+    margin-top: 15px;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    height: 50px;  
+  }
+
+  .icon li {
+    cursor: pointer;
+    background: #333;
+    margin-right: 5px;
+    float: right;
+    display: inline-block;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    line-height: 40px;
+  }
+
+  .icon li:hover {
+    background: #a44;
+  }
+
+  #icon-search {
+    font-size: 2em;
+  }
+
+  #icon-menu {
+    font-size: 3em;
+  }
+
+  [class*="dropdown"] {
+    display:none;
+    background: #333;
+    padding: 10px 0;
+    margin: 5px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .nav li a {
+    width: 95%;
+  }
+
+  .search-input {
+    width: 90%;
+  }
+
+  .header .logo {
+    float: left;
+    margin-left: 15px;
+  }
 }
 
 @media only screen and (min-width: 320px) and (max-width: 479px) {
-  .container {
-    width: 300px;
-  }
-
-  [class*="span"] { 
+  .container, [class*="col-"] { 
     width: 300px 
   }
 } 
 
 @media only screen and (min-width: 480px) and (max-width: 599px) {
-  .container {
-    width: 460px;
-  }
-
-  [class*="span"] { 
+  .container, [class*="col-"] { 
     width: 460px 
   }
 } 
 
 @media only screen and (min-width: 600px) and (max-width: 767px) {
-  .container {
-    width: 580px;
-  }
-
-  [class*="span"] { 
+  .container, [class*="col-"] { 
     width: 580px 
   }
 } 
 
 @media only screen and (min-width: 768px) and (max-width: 979px) {
-  .container {
-    width: 743px;
-  }
 
-  [class*="span"] { 
+  .container, [class*="col-"] { 
     width: 743px 
   }
 
@@ -212,18 +287,22 @@ html {
     height: 200px;
   }
 
-  .span1  { width:  50px }
-  .span2  { width: 113px }
-  .span3  { width: 176px }
-  .span4  { width: 239px }
-  .span5  { width: 302px }
-  .span6  { width: 365px }
-  .span7  { width: 428px }
-  .span8  { width: 491px }
-  .span9  { width: 554px }
-  .span10 { width: 617px }
-  .span11 { width: 680px }
-  .span12 { width: 743px }
+  [class*="col-"] {
+    margin-right: 13px;
+  }
+
+  .col-1  { width:  50px }
+  .col-2  { width: 113px }
+  .col-3  { width: 176px }
+  .col-4  { width: 239px }
+  .col-5  { width: 302px }
+  .col-6  { width: 365px }
+  .col-7  { width: 428px }
+  .col-8  { width: 491px }
+  .col-9  { width: 554px }
+  .col-10 { width: 617px }
+  .col-11 { width: 680px }
+  .col-12 { width: 743px }
 
   .offset1  { margin-left:  50px }
   .offset2  { margin-left: 113px }
@@ -238,7 +317,4 @@ html {
   .offset11 { margin-left: 680px }
   .offset12 { margin-left: 743px }
   
-  [class*="span"] {
-    margin-right: 13px;
-  }
 } 
